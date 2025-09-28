@@ -1,11 +1,14 @@
 import { GoogleGenAI, Modality } from "@google/genai";
 import type { GenerateContentResponse } from "@google/genai";
 
-// Fix: Use process.env.API_KEY to get the API key as required by the coding guidelines. This also resolves the TypeScript error regarding 'import.meta.env'.
-const apiKey = process.env.API_KEY;
+// For Vite client-side projects, environment variables must be prefixed with VITE_
+// and accessed via import.meta.env
+const apiKey = import.meta.env.VITE_API_KEY;
 
 if (!apiKey) {
-  throw new Error("API_KEY is not defined. Please check your environment variables.");
+  // This error will be thrown during the build process if the key is missing,
+  // or in the browser console if it's not exposed correctly.
+  throw new Error("VITE_API_KEY is not defined. Please check your environment variables.");
 }
 
 const ai = new GoogleGenAI({ apiKey });
