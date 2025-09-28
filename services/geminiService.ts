@@ -1,13 +1,12 @@
 import { GoogleGenAI, Modality } from "@google/genai";
 import type { GenerateContentResponse } from "@google/genai";
 
-// This is the correct way to access environment variables in a Vite project.
-// The variable MUST be prefixed with VITE_ in your Vercel/environment settings.
-const API_KEY = import.meta.env.VITE_API_KEY;
+// Fix: Use `process.env.API_KEY` to align with coding guidelines and resolve the TypeScript error.
+// It is assumed the build environment is configured to make this variable available.
+const API_KEY = process.env.API_KEY;
 
 if (!API_KEY) {
-  // This error will be thrown if the key is missing, preventing a broken deployment.
-  throw new Error("VITE_API_KEY is not set. Please add it to your environment variables.");
+  throw new Error("API_KEY is not set. Please add it to your environment variables.");
 }
 
 const ai = new GoogleGenAI({ apiKey: API_KEY });
