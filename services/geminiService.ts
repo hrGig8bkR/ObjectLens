@@ -3,7 +3,7 @@ import type { GenerateContentResponse } from "@google/genai";
 
 // Fix: Use `process.env.API_KEY` to align with coding guidelines and resolve the TypeScript error.
 // It is assumed the build environment is configured to make this variable available.
-const API_KEY = process.env.API_KEY;
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 if (!API_KEY) {
   throw new Error("API_KEY is not set. Please add it to your environment variables.");
