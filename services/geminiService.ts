@@ -3,7 +3,7 @@ import type { GenerateContentResponse } from "@google/genai";
 
 // Fix: Per coding guidelines, the API key must be obtained exclusively from `process.env.API_KEY`.
 // It is assumed that this environment variable is pre-configured and accessible.
-const ai = new GoogleGenAI({ apiKey: process.env.VITE_API_KEY });
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 const base64ToInlineData = (base64String: string, mimeType: string) => {
   // Ensure we only get the data part of the base64 string
