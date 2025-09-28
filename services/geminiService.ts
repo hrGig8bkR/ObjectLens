@@ -1,14 +1,14 @@
-
 import { GoogleGenAI, Modality } from "@google/genai";
 import type { GenerateContentResponse } from "@google/genai";
 
-const API_KEY = import.meta.env.VITE_API_KEY;
+// Fix: Use process.env.API_KEY to get the API key as required by the coding guidelines. This also resolves the TypeScript error regarding 'import.meta.env'.
+const apiKey = process.env.API_KEY;
 
-if (!API_KEY) {
-  throw new Error("VITE_API_KEY environment variable not set");
+if (!apiKey) {
+  throw new Error("API_KEY is not defined. Please check your environment variables.");
 }
 
-const ai = new GoogleGenAI({ apiKey: API_KEY });
+const ai = new GoogleGenAI({ apiKey });
 
 const base64ToInlineData = (base64String: string, mimeType: string) => {
   const base64Data = base64String.split(',')[1];
