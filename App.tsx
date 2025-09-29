@@ -144,12 +144,12 @@ const HelpModal: React.FC<{
         <div className="space-y-4">
           <h1 className="text-xl tracking-wider uppercase text-black">ObjectLens v0.1</h1>
           <p className="text-sm text-gray-800">
-            This prototype lets you capture things in your physical world and visualize them in new ways. Use your camera or upload an image. <a href="https://ai.studio/apps/drive/1sxJWocoemd8kCp9NqsThpAqOcS9gi8DV" target="_blank" rel="noopener noreferrer" className="underline hover:text-black">Open-source code is available here</a>.
+            This prototype lets you capture things in your physical world and visualize them in new ways. Use your camera or upload an image. <a href="https://github.com/hrGig8bkR/ObjectLens" target="_blank" rel="noopener noreferrer" className="underline hover:text-black">Open-source code is available here</a>.
           </p>
         </div>
         <div className="mt-8 text-left">
             <p className="text-xs text-gray-500">
-                Built with Gemini 2.5 (Nano Banana) by <a href="https://x.com/alexanderchen" target="_blank" rel="noopener noreferrer" className="underline hover:text-black">@alexanderchen</a>
+                Built with Gemini 2.5 (Nano Banana) by Harsh
             </p>
         </div>
       </div>
